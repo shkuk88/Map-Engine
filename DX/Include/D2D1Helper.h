@@ -674,13 +674,13 @@ namespace D2D1
         void
         Init(
             UINT32 rgb,
-            FLOAT a
+            FLOAT _a
             )
         {
             this->r = static_cast<FLOAT>((rgb & sc_redMask) >> sc_redShift) / 255.f;
             this->g = static_cast<FLOAT>((rgb & sc_greenMask) >> sc_greenShift) / 255.f;
             this->b = static_cast<FLOAT>((rgb & sc_blueMask) >> sc_blueShift) / 255.f;
-            this->a = a;
+            this->a = _a;
         }
 
         static const UINT32 sc_redShift   = 16;

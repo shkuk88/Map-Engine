@@ -48,13 +48,7 @@
     <ClCompile Include="XSRVManager.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="XHeightMapController.cpp">
-      <Filter>Map</Filter>
-    </ClCompile>
     <ClCompile Include="XMapController.cpp">
-      <Filter>Map</Filter>
-    </ClCompile>
-    <ClCompile Include="XMapExporter.cpp">
       <Filter>Map</Filter>
     </ClCompile>
     <ClCompile Include="XQuadTree.cpp">
@@ -63,20 +57,38 @@
     <ClCompile Include="XQuadTreeIndex.cpp">
       <Filter>Map</Filter>
     </ClCompile>
-    <ClCompile Include="XSpreatController.cpp">
-      <Filter>Map</Filter>
-    </ClCompile>
     <ClCompile Include="XTileRender.cpp">
       <Filter>Map</Filter>
     </ClCompile>
     <ClCompile Include="XMap.cpp">
       <Filter>Map</Filter>
     </ClCompile>
+    <ClCompile Include="XMapData.cpp">
+      <Filter>Map</Filter>
+    </ClCompile>
+    <ClCompile Include="XHeightMapController.cpp">
+      <Filter>Map</Filter>
+    </ClCompile>
+    <ClCompile Include="XMapExporter.cpp">
+      <Filter>Map</Filter>
+    </ClCompile>
     <ClCompile Include="XMapImporter.cpp">
       <Filter>Map</Filter>
     </ClCompile>
-    <ClCompile Include="XMapData.cpp">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="XObjectController.cpp">
+      <Filter>Map</Filter>
+    </ClCompile>
+    <ClCompile Include="XObjectManager.cpp">
+      <Filter>Map</Filter>
+    </ClCompile>
+    <ClCompile Include="XParser.cpp">
+      <Filter>Map</Filter>
+    </ClCompile>
+    <ClCompile Include="XSpreatController.cpp">
+      <Filter>Map</Filter>
+    </ClCompile>
+    <ClCompile Include="XViewer.cpp">
+      <Filter>Map</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -113,9 +125,6 @@
     <ClInclude Include="XStd.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="XHeightMapController.h">
-      <Filter>Map</Filter>
-    </ClInclude>
     <ClInclude Include="XMapController.h">
       <Filter>Map</Filter>
     </ClInclude>
@@ -125,22 +134,37 @@
     <ClInclude Include="XMapData.h">
       <Filter>Map</Filter>
     </ClInclude>
-    <ClInclude Include="XMapExporter.h">
-      <Filter>Map</Filter>
-    </ClInclude>
     <ClInclude Include="XQuadTree.h">
       <Filter>Map</Filter>
     </ClInclude>
     <ClInclude Include="XQuadTreeIndex.h">
       <Filter>Map</Filter>
     </ClInclude>
-    <ClInclude Include="XSpreatController.h">
-      <Filter>Map</Filter>
-    </ClInclude>
     <ClInclude Include="XTileRender.h">
       <Filter>Map</Filter>
     </ClInclude>
+    <ClInclude Include="XHeightMapController.h">
+      <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="XMapExporter.h">
+      <Filter>Map</Filter>
+    </ClInclude>
     <ClInclude Include="XMapImporter.h">
+      <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="XObjectController.h">
+      <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="XObjectManager.h">
+      <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="XParser.h">
+      <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="XSpreatController.h">
+      <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="XViewer.h">
       <Filter>Map</Filter>
     </ClInclude>
   </ItemGroup>

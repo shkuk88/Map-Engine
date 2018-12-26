@@ -96,7 +96,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
-      <AdditionalIncludeDirectories>..\..\Include\Dx; ..\..\Include\Core;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\Dx\Include; ..\..\Include\Core;</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -117,7 +117,7 @@ copy "..\\..\\output\\XDxMapLibrary.lib" "..\\..\\lib\\"
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
-      <AdditionalIncludeDirectories>..\..\Include\Dx;..\..\Include\Core;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\DX\Include;..\..\Include\Core;</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -179,6 +179,9 @@ copy "..\\..\\output\\XDxMapLibrary.lib" "..\\..\\lib\\"
     <ClCompile Include="XMapData.cpp" />
     <ClCompile Include="XMapExporter.cpp" />
     <ClCompile Include="XMapImporter.cpp" />
+    <ClCompile Include="XObjectController.cpp" />
+    <ClCompile Include="XObjectManager.cpp" />
+    <ClCompile Include="XParser.cpp" />
     <ClCompile Include="XQuadTree.cpp" />
     <ClCompile Include="XQuadTreeIndex.cpp" />
     <ClCompile Include="XSelect.cpp" />
@@ -187,6 +190,7 @@ copy "..\\..\\output\\XDxMapLibrary.lib" "..\\..\\lib\\"
     <ClCompile Include="XSpreatController.cpp" />
     <ClCompile Include="XSRVManager.cpp" />
     <ClCompile Include="XTileRender.cpp" />
+    <ClCompile Include="XViewer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="XCamera.h" />
@@ -201,6 +205,9 @@ copy "..\\..\\output\\XDxMapLibrary.lib" "..\\..\\lib\\"
     <ClInclude Include="XMapData.h" />
     <ClInclude Include="XMapExporter.h" />
     <ClInclude Include="XMapImporter.h" />
+    <ClInclude Include="XObjectController.h" />
+    <ClInclude Include="XObjectManager.h" />
+    <ClInclude Include="XParser.h" />
     <ClInclude Include="XQuadTree.h" />
     <ClInclude Include="XQuadTreeIndex.h" />
     <ClInclude Include="XSelect.h" />
@@ -210,6 +217,7 @@ copy "..\\..\\output\\XDxMapLibrary.lib" "..\\..\\lib\\"
     <ClInclude Include="XSRVManager.h" />
     <ClInclude Include="XStd.h" />
     <ClInclude Include="XTileRender.h" />
+    <ClInclude Include="XViewer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

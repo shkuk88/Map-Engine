@@ -120,7 +120,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
-      <AdditionalIncludeDirectories>../../include/Core;../../include/Map;../../fmod/inc;../../include/DX;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../include/Core;../../include/Map;../../fmod/inc;../../DX/Include;</AdditionalIncludeDirectories>
       <MinimalRebuild>false</MinimalRebuild>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
@@ -132,7 +132,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>DebugFastLink</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>../../lib/;../../fmod/lib/;../../Lib/Dx/x64</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../../lib/;../../fmod/lib/;../../DX/Lib/x64</AdditionalLibraryDirectories>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>

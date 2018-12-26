@@ -18,6 +18,7 @@
 #include "XQuadTreeIndex.h"
 #include "XCamera.h"
 #include "XMapImporter.h"
+#include "XObjectManager.h" 
 
 // =====================================================================
 // 카메라 조작(Shift 누르고)
