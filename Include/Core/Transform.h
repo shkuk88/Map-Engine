@@ -30,33 +30,34 @@ public:
 	void SetTransform(const Transform& transform)					 noexcept;
 	void SetPosition(const D3DXVECTOR3& position)					 noexcept;
 	void SetPosition(const float& x, const float& y, const float& z) noexcept;
-	void SetPositionX(const float& x) noexcept;
-	void SetPositionY(const float& y) noexcept;
-	void SetPositionZ(const float& z) noexcept;
+	void SetPositionX(const float& x)								 noexcept;
+	void SetPositionY(const float& y)								 noexcept;
+	void SetPositionZ(const float& z)								 noexcept;
 
 	void SetRotation(const D3DXQUATERNION& rotation)				 noexcept;
 	void SetRotation(const float& x, const float& y, const float& z) noexcept;
-	void SetRotationX(const float& x) noexcept;
-	void SetRotationY(const float& y) noexcept;
-	void SetRotationZ(const float& z) noexcept;
+	void SetRotationX(const float& x)								 noexcept;
+	void SetRotationY(const float& y)								 noexcept;
+	void SetRotationZ(const float& z)								 noexcept;
 
 	void SetScale(const D3DXVECTOR3& scale)							 noexcept;
 	void SetScale(const float& x, const float& y, const float& z)	 noexcept;
-	void SetScaleX(const float& x) noexcept;
-	void SetScaleY(const float& y) noexcept;
-	void SetScaleZ(const float& z) noexcept;
+	void SetScaleX(const float& x)									 noexcept;
+	void SetScaleY(const float& y)									 noexcept;
+	void SetScaleZ(const float& z)									 noexcept;
 	// Getter
-	const Transform&	  GetTransform()const noexcept;
-	const D3DXVECTOR3&	  GetPosition()	const noexcept;
-	const D3DXQUATERNION& GetRotation() const noexcept;
-	const D3DXVECTOR3&	  GetScale()	const noexcept;
+	const Transform&		GetTransform()					   const noexcept;
+	const D3DXVECTOR3&		GetPosition()					   const noexcept;
+	const D3DXQUATERNION&	GetRotation()					   const noexcept;
+	const D3DXVECTOR3&		GetScale()						   const noexcept;
+	float					GetScaleAverage()				   const noexcept;
 	
-	const D3DXVECTOR3&	GetForward()	const noexcept;
-	const D3DXVECTOR3	GetBackward()	const noexcept;
-	const D3DXVECTOR3&	GetRight()		const noexcept;
-	const D3DXVECTOR3	GetLeft()		const noexcept;
-	const D3DXVECTOR3&	GetUp()			const noexcept;
-	const D3DXVECTOR3	GetDown()		const noexcept;
+	const D3DXVECTOR3&	GetForward()						   const noexcept;
+	const D3DXVECTOR3	GetBackward()						   const noexcept;
+	const D3DXVECTOR3&	GetRight()							   const noexcept;
+	const D3DXVECTOR3	GetLeft()							   const noexcept;
+	const D3DXVECTOR3&	GetUp()								   const noexcept;
+	const D3DXVECTOR3	GetDown()							   const noexcept;
 public:
 	Transform() = default;
 	Transform(const D3DXVECTOR3& position, const D3DXQUATERNION& rotation, const D3DXVECTOR3& scale) noexcept;

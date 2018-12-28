@@ -6,21 +6,28 @@
 
 class SoundManager : public IBasis, public ISingleton<SoundManager>
 {
-public:	
+private:	
 	FMOD::System*			m_pSystem;
 	TCHAR					m_Buffer[256];
 
 	map<string, MySound>	m_SoundList;
 	MySound*				m_curBGM;
+	float					m_masterVolume = 1.0f;
+
+	// 사운드 이름, 위치, 사거리
+	queue<tuple<string, D3DXVECTOR3, float> > m_SoundQueue;
 public:
-	void	Load(const string_view& soundName, const bool& isPlay = false, const int& option = FMOD_DEFAULT);
-	void	setBGM(const string_view& soundName);
-	void	Play(const string_view& soundName, const bool& isPlay);
-	void    PlayVariation(string&& soundName, const bool& isPlay, const int& vCount);
-	void	Stop(const string_view& soundName);
-	void	Paused(const string_view& soundName);
-	void	Volume(const string_view& soundName, const float& value);
-	void	setMasterVolume(const float& value);
+	D3DXVECTOR3* m_pListenerPos = nullptr;						// 듣는 위치
+public:
+	void	Load(const string_view& soundName, const bool& isPlay = false, const int& option = FMOD_DEFAULT) noexcept;
+	void	SetBGM(const string_view& soundName) noexcept;
+	void	Play(const string_view& soundName, const bool& isPlay = false) noexcept;
+	void    PlayVariation(string&& soundName, const bool& isPlay, const int& vCount) noexcept;
+	void	PlayQueue(const string_view& soundName, const D3DXVECTOR3& position, const float& maxDistance) noexcept;
+	void	Stop(const string_view& soundName)	 noexcept;
+	void	Paused(const string_view& soundName) noexcept;
+	void	OperVolume(const string_view& soundName, const float& value) noexcept;
+	void	SetMasterVolume(const float& value)	 noexcept;
 public:
 	bool	Init()		noexcept override;
 	bool	Frame()		noexcept override;

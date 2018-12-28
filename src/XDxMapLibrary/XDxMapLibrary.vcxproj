@@ -74,19 +74,25 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>..\..\output\</OutDir>
     <IntDir>..\..\output\XDxMapLibrary\</IntDir>
-    <TargetName>XDxMapLibrary</TargetName>
+    <TargetName>XDxMapLibrary_d</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>..\..\output\</OutDir>
     <IntDir>..\..\output\XDxMapLibrary\</IntDir>
-    <TargetName>XDxMapLibrary</TargetName>
+    <TargetName>XDxMapLibrary_d</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\..\output\</OutDir>
+    <IntDir>..\..\output\XDxMapLibrary\</IntDir>
+    <TargetName>XDxMapLibrary</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\..\output\</OutDir>
+    <IntDir>..\..\output\XDxMapLibrary\</IntDir>
+    <TargetName>XDxMapLibrary</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -105,7 +111,7 @@
     </Link>
     <PostBuildEvent>
       <Command>copy "*.h" "..\\..\\include\\map\\"
-copy "..\\..\\output\\XDxMapLibrary.lib" "..\\..\\lib\\"
+copy "..\\..\\output\\XDxMapLibrary_d.lib" "..\\..\\lib\\"
 </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
@@ -126,7 +132,8 @@ copy "..\\..\\output\\XDxMapLibrary.lib" "..\\..\\lib\\"
     </Link>
     <PostBuildEvent>
       <Command>copy "*.h" "..\\..\\include\\map\\"
-copy "..\\..\\output\\XDxMapLibrary.lib" "..\\..\\lib\\"
+copy "..\\..\\output\\XDxMapLibrary_d.lib" "..\\..\\lib\\"
+
 </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
@@ -139,7 +146,9 @@ copy "..\\..\\output\\XDxMapLibrary.lib" "..\\..\\lib\\"
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
+      <ConformanceMode>false</ConformanceMode>
+      <AdditionalIncludeDirectories>..\..\Dx\Include; ..\..\Include\Core;</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -147,6 +156,10 @@ copy "..\\..\\output\\XDxMapLibrary.lib" "..\\..\\lib\\"
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PostBuildEvent>
+      <Command>copy "*.h" "..\\..\\include\\map\\"
+copy "..\\..\\output\\XDxMapLibrary.lib" "..\\..\\lib\\"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -157,7 +170,9 @@ copy "..\\..\\output\\XDxMapLibrary.lib" "..\\..\\lib\\"
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
+      <ConformanceMode>false</ConformanceMode>
+      <AdditionalIncludeDirectories>..\..\Dx\Include; ..\..\Include\Core;</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -165,6 +180,11 @@ copy "..\\..\\output\\XDxMapLibrary.lib" "..\\..\\lib\\"
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PostBuildEvent>
+      <Command>copy "*.h" "..\\..\\include\\map\\"
+copy "..\\..\\output\\XDxMapLibrary.lib" "..\\..\\lib\\"
+</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="XCamera.cpp" />
@@ -218,6 +238,40 @@ copy "..\\..\\output\\XDxMapLibrary.lib" "..\\..\\lib\\"
     <ClInclude Include="XStd.h" />
     <ClInclude Include="XTileRender.h" />
     <ClInclude Include="XViewer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="..\..\Data\Map\Shader\Ase.hlsl">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </FxCompile>
+    <FxCompile Include="..\..\Data\Map\Shader\BoxShader.hlsl">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </FxCompile>
+    <FxCompile Include="..\..\Data\Map\Shader\LineShader.hlsl">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </FxCompile>
+    <FxCompile Include="..\..\Data\Map\Shader\MapShader.hlsl">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </FxCompile>
+    <FxCompile Include="..\..\Data\Map\Shader\MapShader_Color_Specular.hlsl">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </FxCompile>
+    <FxCompile Include="..\..\Data\Map\Shader\MapShader_Specular.hlsl">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </FxCompile>
+    <FxCompile Include="..\..\Data\Map\Shader\PlaneShader.hlsl">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </FxCompile>
+    <FxCompile Include="..\..\Data\Map\Shader\SkyShader_Sample_0.hlsl">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </FxCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

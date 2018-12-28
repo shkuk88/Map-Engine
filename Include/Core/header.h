@@ -1,5 +1,7 @@
 #pragma once
 #pragma warning(disable : 4005)			// 매크로 재정의 경고 무시
+#pragma warning(disable : 4201)			// 
+#pragma warning(disable : 4099)			//
 #ifndef _WINSOCKAPI_
 #define _WINSOCKAPI_
 #endif
@@ -32,7 +34,11 @@
 //#include <functional>					// 범용비교함수, 함수포인터..
 
 // 라이브러리 링크를 전처리 해준다
-#pragma comment( lib, "_CoreLib D3D.lib")
+#ifdef _DEBUG
+	#pragma comment( lib, "_CoreLib D3D_d.lib")
+#else
+	#pragma comment( lib, "_CoreLib D3D.lib")
+#endif
 //#pragma comment( lib, "ServerLib.lib")
 #pragma comment( lib, "d2d1.lib")
 #pragma comment( lib, "dwrite.lib")
@@ -42,13 +48,13 @@
 #pragma comment( lib, "dxgi.lib")
 #pragma comment( lib, "dxguid.lib" )
 #pragma comment( lib, "winmm.lib")		// +timeGetTime()
-#pragma comment( lib, "msimg32.lib")	// +TransparentBlt()
+#pragma comment( lib, "msimg32.lib")	// +TransparentBlt()	
 
 using namespace std;
 
 constexpr static float PI = 3.14159265358979323846f;
 constexpr static float EPSILON = std::numeric_limits<float>::epsilon();
-constexpr static float GravityPower = 9.8f;
+constexpr static float GravityPower = 9.8f * 25.0f;
 
 namespace Vector3 {
 	const static D3DXVECTOR3 One	  =	{ 1.0f,  1.0f,  1.0f };			// 1, 1, 1
@@ -107,8 +113,10 @@ namespace Matrix {
 };
 
 
-void ErrorMessage(const string_view& msg, const bool& useLoop = false);
-void ErrorMessage(const wstring_view& msg, const bool& useLoop = false);
+char * WCharToChar(const wchar_t* str)	noexcept;
+wchar_t* CharToWChar(const char* str)		noexcept;
+void ErrorMessage(const string_view& msg, const bool& useLoop = false)	noexcept;
+void ErrorMessage(const wstring_view& msg, const bool& useLoop = false) noexcept;
 static constexpr float DegreeToRadian(const float& degree) noexcept
 {
 	return degree * (PI / 180);
@@ -117,14 +125,19 @@ static constexpr float RadianToDegree(const float& radian) noexcept
 {
 	return radian * (180 / PI);
 }
-D3DXVECTOR3 Lerp(const D3DXVECTOR3& start, const D3DXVECTOR3& end, const float& time);
-D3DXQUATERNION Lerp(const D3DXQUATERNION& start, const D3DXQUATERNION& end, const float& time);
-D3DXVECTOR3 Product(const D3DXVECTOR3& vectorA, const D3DXVECTOR3& vectorB);
-D3DXQUATERNION Product(const D3DXQUATERNION& quatA, const D3DXQUATERNION& quatB);
-D3DXVECTOR3 Divide(const D3DXVECTOR3& vectorA, const D3DXVECTOR3& vectorB);
-D3DXQUATERNION Divide(const D3DXQUATERNION& quatA, const D3DXQUATERNION& quatB);
-char * WCharToChar(wchar_t* str);
-wchar_t* CharToWChar(char* str);
+D3DXVECTOR3 Lerp(const D3DXVECTOR3& start, const D3DXVECTOR3& end, const float& time) noexcept;
+D3DXQUATERNION Lerp(const D3DXQUATERNION& start, const D3DXQUATERNION& end, const float& time) noexcept;
+D3DXVECTOR3 Product(const D3DXVECTOR3& vectorA, const D3DXVECTOR3& vectorB) noexcept;
+D3DXQUATERNION Product(const D3DXQUATERNION& quatA, const D3DXQUATERNION& quatB) noexcept;
+D3DXVECTOR3 Divide(const D3DXVECTOR3& vectorA, const D3DXVECTOR3& vectorB) noexcept;
+D3DXQUATERNION Divide(const D3DXQUATERNION& quatA, const D3DXQUATERNION& quatB) noexcept;
+D3DXVECTOR2 Normalize(const D3DXVECTOR2& vector2) noexcept;
+D3DXVECTOR3 Normalize(const D3DXVECTOR3& vector3) noexcept;
+float VectorLength(const D3DXVECTOR2& vector2) noexcept;
+float VectorLength(const D3DXVECTOR3& vector3) noexcept;
+float VectorLengthSq(const D3DXVECTOR2& vector2) noexcept;
+float VectorLengthSq(const D3DXVECTOR3& vector3) noexcept;
+
 
 
 // WELLRNG512 난수 생성
@@ -132,6 +145,10 @@ unsigned long Random(void) noexcept;
 float RandomNormal(void) noexcept;
 // 난수 시드 설정
 void InitWELLState() noexcept;
+
+
+
+
 
 namespace myStd {
 	// 32비트용 sqrt

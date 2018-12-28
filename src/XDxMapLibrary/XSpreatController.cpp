@@ -126,6 +126,111 @@ void XSpreatController::Spreating(ID3D11DeviceContext * pContext, X_Box Collisio
 	}
 }
 
+void XSpreatController::GradationSpreating(ID3D11DeviceContext * pContext, X_Box CollisionBox, D3DXVECTOR3 vCrash, float fRadius, int iColor)
+{
+	D3D11_MAPPED_SUBRESOURCE MappedFaceDest;
+	D3DXVECTOR3 CrashDot = vCrash;
+	CrashDot.x = CrashDot.x * m_TextureDesc.Width;
+	CrashDot.y = 0.0f;
+	CrashDot.z = CrashDot.z * m_TextureDesc.Height;
+	X_Box FixedArea;
+	FixedArea.vMax.x = (int)(CollisionBox.vMax.x * m_TextureDesc.Width);
+	FixedArea.vMax.z = (int)(CollisionBox.vMax.z * m_TextureDesc.Height);
+	FixedArea.vMin.x = (int)(CollisionBox.vMin.x * m_TextureDesc.Width);
+	FixedArea.vMin.z = (int)(CollisionBox.vMin.z * m_TextureDesc.Height);
+
+	if (FixedArea.vMin.x < 0.0f)
+	{
+		FixedArea.vMin.x = 0.0f;
+	}
+	if (FixedArea.vMin.z < 0.0f)
+	{
+		FixedArea.vMin.z = 0.0f;
+	}
+	if (FixedArea.vMax.x > m_TextureDesc.Width)
+	{
+		FixedArea.vMax.x = m_TextureDesc.Width;
+	}
+	if (FixedArea.vMax.z > m_TextureDesc.Height)
+	{
+		FixedArea.vMax.z = m_TextureDesc.Height;
+	}
+
+	float CheckRadius = fRadius * 10.0f;
+	if (SUCCEEDED(pContext->Map((ID3D11Resource*)m_StagingTexture, 0, D3D11_MAP_READ_WRITE, 0, &MappedFaceDest)))
+	{
+		BYTE* pDestBytes = (BYTE*)MappedFaceDest.pData;
+		pDestBytes = pDestBytes + MappedFaceDest.RowPitch * (UINT)FixedArea.vMin.z;
+		for (int y = FixedArea.vMin.z; y < FixedArea.vMax.z; y++)
+		{
+			BYTE* pDest = pDestBytes;
+			pDest = pDest + (UINT)(4 * FixedArea.vMin.x);
+			for (int x = FixedArea.vMin.x; x < FixedArea.vMax.x; x++)
+			{
+				D3DXVECTOR3 Dot = D3DXVECTOR3(x, 0.0f, y);
+				float fColorPower = D3DXVec3Length(&(Dot - CrashDot));
+				if (CheckRadius >= fColorPower)
+				{
+					BYTE* RedDest;
+					RedDest = pDest;
+					*pDest++;
+					BYTE* GreenDest;
+					GreenDest = pDest;
+					*pDest++;
+					BYTE* BlueDest;
+					BlueDest = pDest;
+					*pDest++;
+					BYTE* AlphaDest;
+					AlphaDest = pDest;
+					*pDest++;
+					fColorPower = (fabs(fColorPower - CheckRadius) / CheckRadius) * 255.0f;
+					int iColorPower = (int)fColorPower;
+					float fRatio = (float)(*RedDest + *GreenDest + *BlueDest + iColorPower) / 255.0f; //  *AlphaDest +
+					switch (iColor)
+					{
+					case 0:
+						*RedDest /= fRatio;
+						*RedDest += (iColorPower / fRatio);
+						*GreenDest /= fRatio;
+						*BlueDest /= fRatio;
+						*AlphaDest /= fRatio;
+						break;
+					case 1:
+						*RedDest /= fRatio;
+						*GreenDest /= fRatio;
+						*GreenDest += (iColorPower / fRatio);
+						*BlueDest /= fRatio;
+						*AlphaDest /= fRatio;
+						break;
+					case 2:
+						*RedDest /= fRatio;
+						*GreenDest /= fRatio;
+						*BlueDest /= fRatio;
+						*BlueDest += (iColorPower / fRatio);
+						*AlphaDest /= fRatio;
+						break;
+					case 3:
+						*RedDest /= fRatio;
+						*GreenDest /= fRatio;
+						*BlueDest /= fRatio;
+						*AlphaDest /= fRatio;
+						*AlphaDest += (iColorPower / fRatio);
+						break;
+					default:
+						break;
+					}
+				}
+				else
+				{
+					pDest += 4;
+				}
+			}
+			pDestBytes += MappedFaceDest.RowPitch;
+		}
+		pContext->Unmap(m_StagingTexture, 0);
+		pContext->CopyResource(m_SpreatTexture, m_StagingTexture);
+	}
+}
 
 HRESULT XSpreatController::RGBA_TextureLoad(ID3D11Device * pDevice, const TCHAR * szFile, AlphaColor Color)
 {
@@ -185,6 +290,7 @@ void XSpreatController::SetMapTexture()
 }
 bool XSpreatController::Frame(const float& spf, const float& accTime)
 {
+	static float fps = 0;
 	if (!m_bStart || !m_bEnable) return false;
 	if (I_Input.m_MouseState[0])
 	{
@@ -213,7 +319,19 @@ bool XSpreatController::Frame(const float& spf, const float& accTime)
 					SpreatBox.vMin.z = SpreatBox.vMin.z / fRootNodeSize;
 					SpreatBox.vMax.x = SpreatBox.vMax.x / fRootNodeSize;
 					SpreatBox.vMax.z = SpreatBox.vMax.z / fRootNodeSize;
-					Spreating(DxManager::Get().GetDContext(), SpreatBox, vCrash, m_fRadius, m_SpreatColor);
+					if (m_SpreatMode == SpreatMode_Basic)
+					{
+						Spreating(DxManager::Get().GetDContext(), SpreatBox, vCrash, m_fRadius, m_SpreatColor);
+						return true;
+					}
+					else if (m_SpreatMode == SpreatMode_Gradation)
+					{
+						fps += spf;
+						if (fps < 0.05f) return true;
+						else fps = 0.0f;
+						GradationSpreating(DxManager::Get().GetDContext(), SpreatBox, vCrash, m_fRadius, m_SpreatColor);
+						return true;
+					}
 				}
 			}
 		}

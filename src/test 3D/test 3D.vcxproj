@@ -148,8 +148,8 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>../../include/D3D/;../../fmod/inc;../../DX/include</AdditionalIncludeDirectories>
+      <ConformanceMode>false</ConformanceMode>
+      <AdditionalIncludeDirectories>../../include/Core;../../include/Map;../../fmod/inc;../../DX/include</AdditionalIncludeDirectories>
       <MinimalRebuild>false</MinimalRebuild>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
@@ -162,7 +162,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>../../lib/;../../fmod/lib/;../../DX/Lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../../lib/;../../fmod/lib/;../../DX/Lib/x86/;</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
       <Command>copy "*.dll" "..\\..\\output\\$(ProjectName)\\"</Command>
@@ -180,8 +180,8 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>../../include/D3D/;../../fmod/inc;../../DX/include</AdditionalIncludeDirectories>
+      <ConformanceMode>false</ConformanceMode>
+      <AdditionalIncludeDirectories>../../include/Core;../../include/Map;../../fmod/inc;../../DX/include</AdditionalIncludeDirectories>
       <MinimalRebuild>false</MinimalRebuild>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
@@ -195,7 +195,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>../../lib/;../../fmod/lib/;../../DX/Lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../../lib/;../../fmod/lib/;../../DX/Lib/x64</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
       <Command>copy "*.dll" "..\\..\\output\\$(ProjectName)\\"</Command>

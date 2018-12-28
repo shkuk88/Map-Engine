@@ -21,11 +21,11 @@ public:
 	unsigned int	m_CurrentLength;
 	float			m_CurrentVolume;
 public:
-	unsigned int getTotalSecond();
-	unsigned int getCurrentSecond();
-	float getVolume();
-	void  operVolume(const float& value);
-	void  setVolume(const float& value);
+	unsigned int GetTotalSecond()		 noexcept;
+	unsigned int GetCurrentSecond()		 noexcept;
+	float GetVolume()					 noexcept;
+	void  OperVolume(const float& value) noexcept;
+	void  SetVolume(const float& value)  noexcept;
 public:
 	MySound();
 	virtual ~MySound();

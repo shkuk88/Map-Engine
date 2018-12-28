@@ -1,5 +1,10 @@
 #pragma once
+#ifdef _DEBUG
+#pragma comment( lib, "_CoreLib D3D_d.lib")
+#else
 #pragma comment( lib, "_CoreLib D3D.lib")
+#endif // _DEBUG
+
 #include "CoreDX.h"
 ///
 #include "SkySphere.h"

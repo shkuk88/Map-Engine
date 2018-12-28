@@ -16,6 +16,9 @@
     <Filter Include="Map">
       <UniqueIdentifier>{5901f5ed-211d-44b9-ad49-00fcb8e5c28a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shader">
+      <UniqueIdentifier>{f2a9bb0a-44df-4c5a-ad99-d74788726cdd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="XCamera.cpp">
@@ -167,5 +170,31 @@
     <ClInclude Include="XViewer.h">
       <Filter>Map</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="..\..\Data\Map\Shader\Ase.hlsl">
+      <Filter>Shader</Filter>
+    </FxCompile>
+    <FxCompile Include="..\..\Data\Map\Shader\BoxShader.hlsl">
+      <Filter>Shader</Filter>
+    </FxCompile>
+    <FxCompile Include="..\..\Data\Map\Shader\LineShader.hlsl">
+      <Filter>Shader</Filter>
+    </FxCompile>
+    <FxCompile Include="..\..\Data\Map\Shader\MapShader.hlsl">
+      <Filter>Shader</Filter>
+    </FxCompile>
+    <FxCompile Include="..\..\Data\Map\Shader\MapShader_Color_Specular.hlsl">
+      <Filter>Shader</Filter>
+    </FxCompile>
+    <FxCompile Include="..\..\Data\Map\Shader\MapShader_Specular.hlsl">
+      <Filter>Shader</Filter>
+    </FxCompile>
+    <FxCompile Include="..\..\Data\Map\Shader\PlaneShader.hlsl">
+      <Filter>Shader</Filter>
+    </FxCompile>
+    <FxCompile Include="..\..\Data\Map\Shader\SkyShader_Sample_0.hlsl">
+      <Filter>Shader</Filter>
+    </FxCompile>
   </ItemGroup>
 </Project>

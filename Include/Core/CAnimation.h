@@ -24,7 +24,7 @@ private:
 	float m_animFrame	= 0.0f;		// 애님 프레임 간격
 	float m_frameCount	= 0.0f;		// 애님 계산용
 public:
-	void Update() noexcept override;
+	void Update()										noexcept override;
 
 	bool Init()											noexcept override;
 	bool Frame(const float& spf, const float& accTime)	noexcept override;

@@ -288,8 +288,8 @@ bool XMap::CreateIndexList()
 float XMap::GetHeight(float x, float z)
 {
 	float fHeight = 0.0f;
-	float fCellX = (float)((m_iCol - 1) / 2.0f + x);
-	float fCellZ = (float)((m_iRow - 1) / 2.0f - z);
+	float fCellX = (float)((m_iCol - 1) / 2.0f + x / m_fDistance) ;
+	float fCellZ = (float)((m_iRow - 1) / 2.0f - z / m_fDistance) ;
 
 	//소수부분 잘라냄   v0,(x,z)부분?
 	float fVertexCol = ::floorf(fCellX);
@@ -392,39 +392,6 @@ D3DXVECTOR3 XMap::ComputeFaceNormal(DWORD dwIndex0, DWORD dwIndex1, DWORD dwInde
 	D3DXVec3Normalize(&vNormal, &vNormal);
 	return vNormal;
 }
-
-//void TMap::CalcPerVertexNormalsFastLookup() sample
-//{
-//	CreateFaceNormals();
-//
-//	for (int iVertex = 0; iVertex < (m_iNumCols * m_iNumRows); iVertex++)
-//	{
-//		float divisor = 1.0f;
-//		D3DXVECTOR3 avgNormal;
-//		avgNormal = D3DXVECTOR3(0.0f, 0.0f, 0.0f);
-//
-//		for (int iNegigbor = 0; iNegigbor<6; iNegigbor++)
-//		{
-//			int triIndex;
-//			triIndex = m_pNormalLookupTable[iVertex * 6 + iNegigbor];
-//
-//			if (triIndex != -1)
-//			{
-//				avgNormal += m_pFaceNormals[triIndex];
-//				divisor += 1.0f;
-//			}
-//			else
-//				break;
-//		}
-
-//		avgNormal.x /= divisor;
-//		avgNormal.y /= divisor;
-//		avgNormal.z /= divisor;
-//		D3DXVec3Normalize(&avgNormal, &avgNormal);
-//
-//		m_pvHeightMap[iVertex].n = avgNormal;
-//	}
-//}
 
 bool XMap::GetNormalLookUpTable()
 {
@@ -535,6 +502,7 @@ bool XMap::PostRender(ID3D11DeviceContext* pContext)
 
 bool XMap::Render(ID3D11DeviceContext* pContext)noexcept
 {
+	DxManager::Get().SetSamplerState(0, ESamTextureS::Mirror);
 	UpdateLight();	// SetMatrix가 먼저 되야한다.
 
 	pContext->UpdateSubresource(m_pVertexBuffer.Get(), 0, NULL, &m_VertexList.at(0), NULL, NULL);
@@ -563,9 +531,8 @@ bool XMap::Render(ID3D11DeviceContext* pContext)noexcept
 	{
 		pContext->PSSetShaderResources(0, 1, m_pTextureSRV.GetAddressOf());
 	}
-	if (m_AlphaSRV.size())
+	if (m_pTextureSRV && m_AlphaSRV.size())
 	{
-		pContext->VSSetShader(m_pVS[Tex_Have].Get(), NULL, 0);
 		pContext->PSSetShader(m_pPS[Tex_Have].Get(), NULL, 0);
 		for (int iAlphaTex = 0; iAlphaTex < m_AlphaSRV.size(); iAlphaTex++)
 		{
@@ -573,7 +540,7 @@ bool XMap::Render(ID3D11DeviceContext* pContext)noexcept
 		}
 	}
 	pContext->DrawIndexed(m_dwIndexList.size(), 0, 0);
-
+	DxManager::Get().SetSamplerState(0, ESamTextureS::Current);
 	return true;
 }
 

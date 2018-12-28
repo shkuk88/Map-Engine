@@ -80,6 +80,8 @@ void XHeightMapController::HeightFlat()
 
 bool XHeightMapController::Frame(const float& spf, const float& accTime)
 {
+	static float fps = 0;
+	fps += spf;
 	if (!m_bStart || m_bHeightCtrlState == None) return false;
 	if (I_Input.m_MouseState[0])
 	{
@@ -92,7 +94,11 @@ bool XHeightMapController::Frame(const float& spf, const float& accTime)
 		{
 			HeightFlat();
 		}
-		m_pMap->CalcPerVertexNormalsFastLookUp();
+		if (fps > 0.05f)
+		{
+			fps = 0;
+			m_pMap->CalcPerVertexNormalsFastLookUp();
+		}
 	}
 	return true;
 }

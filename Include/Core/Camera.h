@@ -16,11 +16,7 @@ protected:
 	// 부모와 보간된 좌표, 각도
 	D3DXVECTOR3	m_curPosition;
 	D3DXQUATERNION m_curRotation;
-
 	float m_Aspect;			// 종횡비
-	float m_FOV;			// 시야각
-	float m_Near;			// 최소 가시 거리
-	float m_Far;			// 최대 가시 거리
 	// 최대속, 가속, 현재속
 	float m_maxMoveSpeed;
 	float m_accMoveSpeed;
@@ -30,6 +26,15 @@ protected:
 
 	bool m_isPerspect = true;		// 원근이니
 public:
+	float m_FOV;			// 시야각
+	float m_Near;			// 최소 가시 거리
+	float m_Far;			// 최대 가시 거리
+	// 보간 속도
+	float m_lerpMoveSpeed;
+	float m_lerpRotateSpeed;
+	// 암 길이
+	float m_armLength;
+public:
 	static Camera* SelectCamera;	// 선택된 카메라
 
 	D3DXMATRIX  m_matWorld;			// 월드
@@ -38,13 +43,16 @@ public:
 	CB_VSMatrix		m_cbVS;			// 변환될 행렬
 protected:
 	// 뷰 행렬, 투영 행렬 세팅
-	void SetViewMatrix();
-	void SetProjMatrix();
-	void UpdateMatrix() noexcept override;					// 행렬 갱신
+	void SetViewMatrix()										noexcept;
+	void SetProjMatrix()										noexcept;
+	// 행렬 갱신
+	void UpdateMatrix()											noexcept override;	
 public:
-	virtual void SetParent(GameObject* pParent) override;
-	void SetOrthoWH(const float& width, const float& height);
-	void isPerspect(const bool& isPerspect);
+	virtual void SetParent(GameObject* pParent)					noexcept override;
+	void SetOrthoWH(const float& width, const float& height)	noexcept;
+	void isPerspect(const bool& isPerspect)						noexcept;
+
+	void SetMainCamera()										noexcept;
 
 	virtual bool Init()											noexcept override;
 	virtual bool Frame(const float& spf, const float& accTime)	noexcept override;

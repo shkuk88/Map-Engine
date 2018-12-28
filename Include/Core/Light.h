@@ -53,10 +53,10 @@ public:
 	CB_Material		m_cbMaterial;			// 쉐도우 데이터
 	ELight m_lightType;
 protected:
-	HRESULT CreateConstBuffer(const void* data, const UINT& dataSize, ID3D11Buffer** pConstBuffer);
-	void	UpdateConstBuffer(ID3D11DeviceContext* pDContext) noexcept;
+	HRESULT CreateConstBuffer(const void* data, const UINT& dataSize, ID3D11Buffer** pConstBuffer) noexcept;
+	void	UpdateConstBuffer(ID3D11DeviceContext* pDContext)	noexcept;
 public:
-	void SetParent(GameObject* pParent) override;
+	void SetParent(GameObject* pParent)							noexcept override;
 
 	virtual bool Init()											noexcept override;
 	virtual bool Frame(const float& spf, const float& accTime)	noexcept override;
