@@ -16,7 +16,7 @@
 #include "RLine.h"
 #include "RSphere.h"
 #include "RCube.h"
-#include "HeightMap.h"
+//#include "HeightMap.h"
 #include "CTransformer.h"
 
 //map

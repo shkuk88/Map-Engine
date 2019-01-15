@@ -2,6 +2,7 @@
 #pragma warning(disable : 4005)			// 매크로 재정의 경고 무시
 #pragma warning(disable : 4201)			// 
 #pragma warning(disable : 4099)			//
+
 #ifndef _WINSOCKAPI_
 #define _WINSOCKAPI_
 #endif
@@ -113,10 +114,17 @@ namespace Matrix {
 };
 
 
-char * WCharToChar(const wchar_t* str)	noexcept;
-wchar_t* CharToWChar(const char* str)		noexcept;
 void ErrorMessage(const string_view& msg, const bool& useLoop = false)	noexcept;
 void ErrorMessage(const wstring_view& msg, const bool& useLoop = false) noexcept;
+// WELLRNG512 난수 생성
+unsigned long Random(void) noexcept;
+float RandomNormal(void) noexcept;
+// 난수 시드 설정
+void InitWELLState() noexcept;
+///
+char * WCharToChar(const wchar_t* str)	noexcept;
+wchar_t* CharToWChar(const char* str)		noexcept;
+///
 static constexpr float DegreeToRadian(const float& degree) noexcept
 {
 	return degree * (PI / 180);
@@ -125,26 +133,44 @@ static constexpr float RadianToDegree(const float& radian) noexcept
 {
 	return radian * (180 / PI);
 }
-D3DXVECTOR3 Lerp(const D3DXVECTOR3& start, const D3DXVECTOR3& end, const float& time) noexcept;
-D3DXQUATERNION Lerp(const D3DXQUATERNION& start, const D3DXQUATERNION& end, const float& time) noexcept;
-D3DXVECTOR3 Product(const D3DXVECTOR3& vectorA, const D3DXVECTOR3& vectorB) noexcept;
-D3DXQUATERNION Product(const D3DXQUATERNION& quatA, const D3DXQUATERNION& quatB) noexcept;
-D3DXVECTOR3 Divide(const D3DXVECTOR3& vectorA, const D3DXVECTOR3& vectorB) noexcept;
-D3DXQUATERNION Divide(const D3DXQUATERNION& quatA, const D3DXQUATERNION& quatB) noexcept;
-D3DXVECTOR2 Normalize(const D3DXVECTOR2& vector2) noexcept;
-D3DXVECTOR3 Normalize(const D3DXVECTOR3& vector3) noexcept;
-float VectorLength(const D3DXVECTOR2& vector2) noexcept;
-float VectorLength(const D3DXVECTOR3& vector3) noexcept;
-float VectorLengthSq(const D3DXVECTOR2& vector2) noexcept;
-float VectorLengthSq(const D3DXVECTOR3& vector3) noexcept;
+const D3DXVECTOR3	 Lerp(const D3DXVECTOR3& start, const D3DXVECTOR3& end, const float& time)		 noexcept;
+const D3DXQUATERNION Lerp(const D3DXQUATERNION& start, const D3DXQUATERNION& end, const float& time) noexcept;
+const D3DXVECTOR3	 Product(const D3DXVECTOR3& vectorA, const D3DXVECTOR3& vectorB)				 noexcept;
+const D3DXQUATERNION Product(const D3DXQUATERNION& quatA, const D3DXQUATERNION& quatB)				 noexcept;
+const D3DXVECTOR3	 Divide(const D3DXVECTOR3& vectorA, const D3DXVECTOR3& vectorB)					 noexcept;
+const D3DXQUATERNION Divide(const D3DXQUATERNION& quatA, const D3DXQUATERNION& quatB)				 noexcept;
+const D3DXVECTOR2	 Normalize(const D3DXVECTOR2& vector2)											 noexcept;
+const D3DXVECTOR3	 Normalize(const D3DXVECTOR3& vector3)											 noexcept;
+//const D3DXVECTOR2	 VectorCross(const D3DXVECTOR2& vectorA, const D3DXVECTOR2& vectorB)			 noexcept;
+const D3DXVECTOR3	 VectorCross(const D3DXVECTOR3& vectorA, const D3DXVECTOR3& vectorB)			 noexcept;
+const float			 VectorDot(const D3DXVECTOR2& vectorA, const D3DXVECTOR2& vectorB)				 noexcept;
+const float			 VectorDot(const D3DXVECTOR3& vectorA, const D3DXVECTOR3& vectorB)				 noexcept;
+const float			 VectorLength(const D3DXVECTOR2& vector2)										 noexcept;
+const float			 VectorLength(const D3DXVECTOR3& vector3)										 noexcept;
+const float			 VectorLengthSq(const D3DXVECTOR2& vector2)										 noexcept;
+const float			 VectorLengthSq(const D3DXVECTOR3& vector3)										 noexcept;
+const D3DXMATRIX	 MatrixTranspose(const D3DXMATRIX& matrix)										 noexcept;
 
 
 
-// WELLRNG512 난수 생성
-unsigned long Random(void) noexcept;
-float RandomNormal(void) noexcept;
-// 난수 시드 설정
-void InitWELLState() noexcept;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -220,37 +246,3 @@ namespace myStd {
 
 	// con, tan, 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// 메모리 누수
-// 객체 스크립트-> 디버그 모드일시 마우스 클릭 드래그로 상태값 변경 : 적용시 객체 위치 찾아서 갱신
-
-
-
-// 횡스크롤 or 탑뷰
-// 드래그 & 드랍으로 적 집고, 날리고(힘 적용) 충돌 시켜 딜링.. 맵 타일 주어서 던지거나...
-// 오른쪽 드래그&드랍 : 해당 방향으로 힘 가함(날라간 객체끼리 또 충돌된다거나.. , 날라가는 중인지:날리는 힘 계산해 연쇄충돌)
-// 왼클릭 드래그로 베거나, 스킬 드래그해서 라인, 오브젝트(벽 등) 생성 및 투하
-// 객체 클릭후 방향 드래그로 해당 방향 날리기
-
-// 와이어 선 각각을 객체로, 전후 선들과 리스트처럼 연결,
-// 와이어 액션(끌당, 이동, 엮기..), 와이어 줄에도 충돌 및 데미지 판정-> 날리거나 교살 등..
-// 왼쪽, 오른쪽 각각 할당 : 상하키 입력으로 이동 및 끌당(조이기, 늘리기), 가운데 버튼-엮기(끊기)
-// 완전 탄성 충돌(튕기고 튕기고..)

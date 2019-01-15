@@ -1,0 +1,469 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="XHeightMapController" Collapsed="true" HideInheritanceLine="true">
+    <Position X="3.25" Y="5" Width="1.5" />
+    <InheritanceLine Type="XSingleton&lt;XHeightMapController&gt;" IsHidden="true" />
+    <TypeIdentifier>
+      <HashCode>AAAQJAAgAAAAAAQAAAAAAAACAAAAAAAAIBACABAAQAE=</HashCode>
+      <FileName>XHeightMapController.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XMap" Collapsed="true">
+    <Position X="1" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IEkFAAHAAACACEGgAAApAABgMAgAAFBkghACORASQIE=</HashCode>
+      <FileName>XMap.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XMapController" Collapsed="true">
+    <Position X="5.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>oAEEBAAAAGABACAAABAAAAFAQAQAgAAAABACBJCAAAE=</HashCode>
+      <FileName>XMapController.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XMapData" Collapsed="true">
+    <Position X="4" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IEBgAABAgAAAAIAUAAhAEAAAAABACAEAAAEAAAEAAAA=</HashCode>
+      <FileName>XMapData.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XMapExporter" Collapsed="true">
+    <Position X="5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gIAAAAAAAAAAAARAAAAABAAAAEAAEAAAAAAAAAAAIAA=</HashCode>
+      <FileName>XMapExporter.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XMapImporter" Collapsed="true">
+    <Position X="2.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAABAAAAIAAABAAIAAAAAAAAABABAAAAAAA=</HashCode>
+      <FileName>XMapImporter.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XObjectController" Collapsed="true" HideInheritanceLine="true">
+    <Position X="7.25" Y="5" Width="1.5" />
+    <InheritanceLine Type="XSingleton&lt;XObjectController&gt;" IsHidden="true" />
+    <TypeIdentifier>
+      <HashCode>IQAAAAAQACAAAAAAAAAIAACABAAABEBAAFGKCBAEAAE=</HashCode>
+      <FileName>XObjectController.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XObjectManager" Collapsed="true">
+    <Position X="11" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EQCAAAAAAAAAAAAgAAAAAACADAAAAAAAABCCABAAAAE=</HashCode>
+      <FileName>XObjectManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XParser" Collapsed="true">
+    <Position X="20.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAgAgAAEAAMAAIQAgABCAAAAAFAAAQAAAAAACAAQAA=</HashCode>
+      <FileName>XParser.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XNode" Collapsed="true">
+    <Position X="27.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAoRAAAAgAQAAIhAAAAAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>XQuadTree.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XQuadTree" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAiAAAAABAABABAECACAEBAAAgAAAQBICABAQEAE=</HashCode>
+      <FileName>XQuadTree.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XStaticData" Collapsed="true">
+    <Position X="25.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAQABAAAEAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>XQuadTreeIndex.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XQuadTreeIndex" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAACAIIAAAARIAAAEAACAAAAAAoQAAABACABAQAAE=</HashCode>
+      <FileName>XQuadTreeIndex.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XSpreatController" Collapsed="true" HideInheritanceLine="true">
+    <Position X="5.25" Y="5" Width="1.5" />
+    <InheritanceLine Type="XSingleton&lt;XSpreatController&gt;" IsHidden="true" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAgACCgAABAQCAE0EAAAAEKAIQAAFUCABAAABE=</HashCode>
+      <FileName>XSpreatController.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XTileRender" Collapsed="true">
+    <Position X="0.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAABACAhAAAAE=</HashCode>
+      <FileName>XTileRender.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XViewer" Collapsed="true">
+    <Position X="27.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>YZiEABAEQAEEAgAAggBUAEiAoEILiEBAARCCChgCAEE=</HashCode>
+      <FileName>XViewer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCamera" Collapsed="true">
+    <Position X="10.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUAAEAAEgAAggAgBABAEQEAECABAgBAAhBiABgAABE=</HashCode>
+      <FileName>XCamera.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XDxRT" Collapsed="true">
+    <Position X="24" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ARAABAACIIAAAAAgAAAAAAAQAgBQAUAAAhAACABAAAI=</HashCode>
+      <FileName>XDxRT.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XDxState" Collapsed="true">
+    <Position X="25.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAFAAAAIAgAAAAAAAAAAAAEAEAABAAABBAAAQAAAA=</HashCode>
+      <FileName>XDxState.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XFrustum" Collapsed="true">
+    <Position X="10.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAEAAABAAAAwgAQAAAIAACAAAAAAEAAAACAAQQABAA=</HashCode>
+      <FileName>XFrustum.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XInput" Collapsed="true">
+    <Position X="12.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>FAAgIAgAICQgBAAAAAAAAIAAEJQAAAAAgBQiBBAIAAE=</HashCode>
+      <FileName>XInput.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XSelect" Collapsed="true">
+    <Position X="7.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQQEASCAAAAAAEQQAESAABDEAAAACACAAACEhAAAAAA=</HashCode>
+      <FileName>XSelect.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XShape" Collapsed="true">
+    <Position X="3.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IRgEAAAAEAEEgAAAgBFAAACQACABiAFgABCiAFAAAAE=</HashCode>
+      <FileName>XShape.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XLineShape" Collapsed="true">
+    <Position X="2.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAgAAAAAAAAAAAIAEAEAAgBACABAAAAE=</HashCode>
+      <FileName>XShape.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XBoxShape" Collapsed="true">
+    <Position X="4.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAIAABAAEAAAAAAAAAAEAAABACABAAAAE=</HashCode>
+      <FileName>XShape.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XPlaneShape" Collapsed="true">
+    <Position X="6.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAEIAAAAAAAAAEAAABACABAABAE=</HashCode>
+      <FileName>XShape.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XSkyBox" Collapsed="true">
+    <Position X="4.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAgAAAAAAAAEAAAAAAAABACAAABACABAAABE=</HashCode>
+      <FileName>XSkyBox.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XSRVManager" Collapsed="true">
+    <Position X="9.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIIAAAAAAAAAAAAAAEAAAAAAAAAIAQAAAAAAAABAAAA=</HashCode>
+      <FileName>XSRVManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XBase" Collapsed="true">
+    <Position X="20.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAARACABAAAAE=</HashCode>
+      <FileName>XStd.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XSingleton&lt;X&gt;" Collapsed="true">
+    <Position X="10.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>XStd.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XPosition" Collapsed="true">
+    <Position X="22.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAIAAAAAAAAAAAAAAAAAAABgAAAAAAA=</HashCode>
+      <FileName>XStd.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XRectangle" Collapsed="true">
+    <Position X="24" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAABAAAAAAAAgAABAIAAAAAAAgAAAAgAA=</HashCode>
+      <FileName>XStd.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DX::XDxHelper" Collapsed="true">
+    <Position X="22.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAEAAAAAAAAAAAAAAAAAAABAAABAAQAACAA=</HashCode>
+      <FileName>XDxHelper.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="ConstantBuffer_Light" Collapsed="true">
+    <Position X="22.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgABIAAQAAAAAAAAAAAAAAAAEAAAAAAAEAAAAAABQBA=</HashCode>
+      <FileName>XMap.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="XVertexLookUp" Collapsed="true">
+    <Position X="22.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>XMap.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="XFaceList" Collapsed="true">
+    <Position X="22.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAABAAAAA=</HashCode>
+      <FileName>XParser.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="XScene" Collapsed="true">
+    <Position X="27.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQgAAAAAAAAAAAAgAAAAAAAAE=</HashCode>
+      <FileName>XViewer.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="XTexture" Collapsed="true">
+    <Position X="20.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>XViewer.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="XMtrl" Collapsed="true">
+    <Position X="25.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>XViewer.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="PNCT" Collapsed="true">
+    <Position X="20.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAEEQAAAAAAAA=</HashCode>
+      <FileName>XViewer.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="PNCTGroup" Collapsed="true">
+    <Position X="24" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>XViewer.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="TAnim" Collapsed="true">
+    <Position X="20.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>XViewer.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="RAnim" Collapsed="true">
+    <Position X="25.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAACAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>XViewer.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="SAnim" Collapsed="true">
+    <Position X="27.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAgAoAAAAAA=</HashCode>
+      <FileName>XViewer.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="CB" Collapsed="true">
+    <Position X="20.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAABAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>XViewer.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="XMesh" Collapsed="true">
+    <Position X="24" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAQCIAAAAhggCAAUAAAAAAAQBKAEAACAAAAAIAAA=</HashCode>
+      <FileName>XViewer.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="XBASIS_INPUT_MAP" Collapsed="true">
+    <Position X="20.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAWAgIAACAABCAAAECFAAACQIACAAABgAMAIIEgAICA=</HashCode>
+      <FileName>XInput.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="X_Ray" Collapsed="true">
+    <Position X="25.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAEAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>XSelect.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="PC_Vertex" Collapsed="true">
+    <Position X="27.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAEAAAAAAAAA=</HashCode>
+      <FileName>XShape.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="PNCT_Vertex" Collapsed="true">
+    <Position X="22.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAEEQAAAAAAAA=</HashCode>
+      <FileName>XShape.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="ConstantBuffer_Matrix" Collapsed="true">
+    <Position X="24" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAABAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>XShape.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="float2" Collapsed="true">
+    <Position X="25.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>XStd.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="X_Plane" Collapsed="true">
+    <Position X="24" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAgAAAAECkAQAAAAAAAAA=</HashCode>
+      <FileName>XStd.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="X_Sphere" Collapsed="true">
+    <Position X="27.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAgAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>XStd.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="X_Box" Collapsed="true">
+    <Position X="22.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAAAAgAAAAAAQAAAIACAAAAA=</HashCode>
+      <FileName>XStd.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Typedef Name="tstring" Collapsed="true">
+    <Position X="20.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>XViewer.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="TString" Collapsed="true">
+    <Position X="22.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>XStd.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Enum Name="HeightControl" Collapsed="true">
+    <Position X="24" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAEAAAI=</HashCode>
+      <FileName>XHeightMapController.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TexturePresence" Collapsed="true">
+    <Position X="24" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>XMap.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="DataType" Collapsed="true">
+    <Position X="22.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAEAIgAAAEAAMAACAAIACBAAAAA=</HashCode>
+      <FileName>XParser.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SpreatView" Collapsed="true">
+    <Position X="22.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>XSpreatController.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="AlphaColor" Collapsed="true">
+    <Position X="20.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAECACAAAABAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>XSpreatController.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SpreatMode" Collapsed="true">
+    <Position X="20.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>XSpreatController.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="OBJECT_TYPE" Collapsed="true">
+    <Position X="27.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>XViewer.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="X_POSITION" Collapsed="true">
+    <Position X="25.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAgQAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>XFrustum.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="KeyState" Collapsed="true">
+    <Position X="25.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAgAAAAAAAAAAAAAAgAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>XInput.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="맑은 고딕" Size="9" />
+</ClassDiagram>

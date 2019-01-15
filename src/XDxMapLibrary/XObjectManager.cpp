@@ -15,6 +15,12 @@ TString XObjectManager::AddObject(ID3D11Device* pDevice, ID3D11DeviceContext* pC
 	return szFileName;
 }
 
+bool XObjectManager::DelObjWorldMat(TString szObjName, int iSelecObj)
+{
+	m_ObjectMatrix[szObjName].erase(m_ObjectMatrix[szObjName].begin() + iSelecObj);
+	return true;
+}
+
 bool XObjectManager::AddObjectWorldMat(TString szObj, D3DXMATRIX matWorld)
 {
 	for (auto iter : m_ObjectList)
@@ -40,6 +46,25 @@ void XObjectManager::SetMatrix(D3DXMATRIX * matView, D3DXMATRIX * matProj)
 	}
 }
 
+void XObjectManager::AddCollider(TString szObject, X_Box OBB)
+{
+	XBoxShape box;
+	box.Create(_T("../../Data/Map/Shader/BoxShader.hlsl"), _T("../../Data/Map/Shader/BoxShader.hlsl"), "VS", "PS");
+	box.SetCollider(DxManager::Get().GetDContext(), OBB);
+	m_OBBViewerList[szObject].push_back(box);
+}
+
+void XObjectManager::ViewColliderSwitch()
+{
+	if (m_bViewCollider)
+		m_bViewCollider = false;
+	else
+		m_bViewCollider = true;
+}
+
+
+
+
 bool XObjectManager::Init()
 {
 	D3DXMatrixIdentity(&m_matView);
@@ -60,6 +85,17 @@ bool XObjectManager::Frame(const float& spf, const float& accTime)
 	return true;
 }
 
+void XObjectManager::DrawCollider(TString szObject, ID3D11DeviceContext * pContext, D3DXMATRIX matObjWorld)
+{
+	pContext->IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY_LINELIST);
+	for (int iOBBCount = 0; iOBBCount < m_OBBViewerList[szObject].size(); iOBBCount++)
+	{
+		m_OBBViewerList[szObject][iOBBCount].SetMatrix(&matObjWorld, &m_matView, &m_matProj);
+		m_OBBViewerList[szObject][iOBBCount].Render(pContext);
+	}
+	pContext->IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
+}
+
 bool XObjectManager::Render(ID3D11DeviceContext* pContext)
 {
 	// 모든 오브젝트를 순회하는  Render
@@ -67,10 +103,17 @@ bool XObjectManager::Render(ID3D11DeviceContext* pContext)
 	{
 		for (int iMatrix = 0; iMatrix < m_ObjectMatrix[pObject.first].size(); iMatrix++)
 		{
-			pObject.second->SetMatrix(&m_ObjectMatrix[pObject.first][iMatrix], &m_matView, &m_matProj);
+			D3DXMATRIX matObjectWorld = m_ObjectMatrix[pObject.first][iMatrix];
+			pObject.second->SetMatrix(&matObjectWorld, &m_matView, &m_matProj);
 			pObject.second->Render(pContext);
+
+			if (m_bViewCollider)
+			{
+				DrawCollider(pObject.first, pContext, matObjectWorld);
+			}
 		}
 	}
+
 	return true;
 }
 

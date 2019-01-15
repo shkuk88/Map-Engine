@@ -17,29 +17,28 @@ enum EMouseButton : char {
 class Input : public ISingleton<Input>, public IBasis
 {
 public:
-	static bool	 isDebug;
-	//static bool	 isChatting;
+	static bool			isDebug;
 private:
-	static short m_WheelScroll;
-	static short m_tempWheelScroll;
-	static POINT m_Cursor;
-	static POINT m_prevCursor;
-	static D3DXVECTOR2 m_moveCursorPos;
-	static EKeyState m_KeyState[256];
-	static EKeyState m_MouseState[3];
-	static EKeyState m_MousePrevState[3];
+	static short		m_WheelScroll;
+	static short		m_tempWheelScroll;
+	static POINT		m_Cursor;
+	static POINT		m_prevCursor;
+	static D3DXVECTOR2	m_moveCursorPos;
+	static EKeyState	m_KeyState[256];
+	static EKeyState	m_MousePrevState[3];
 private:
 	void			   KeyCheck(const WORD& key);			// 키 검사(1회만)
 public:
 	static POINT	   GetCursor();
-	static EKeyState   GetMouseState(const EMouseButton& mouseButton);
+	///
+	//static EKeyState   GetMouseState(const EMouseButton& mouseButton);
 	static short	   GetWheelScroll();
 	static EKeyState   GetKeyState(const WORD& keyValue);
 	static D3DXVECTOR2 GetMouseMovePos();
 	static void		   OperMoveMousePos(const D3DXVECTOR2& vector2);
 
-	void		 MsgEvent(const MSG& message);			// 마우스 클릭 처리
-	void		 MouseUpdate();							// 마우스 상태 갱신
+	void		 MsgEvent(const MSG& message) noexcept;		// 마우스 클릭 처리
+	void		 MouseUpdate();								// 마우스 상태 갱신
 public:
 	virtual bool Init()		noexcept override;
 	virtual bool Frame()	noexcept override;
@@ -52,5 +51,3 @@ public:
 	friend class Timer;
 	virtual ~Input() = default;
 };
-
-//#define I_Input  Input::GetInstance()

@@ -2,11 +2,11 @@
 
 
 
-XMultiTextureRender::XMultiTextureRender()
+XTileRender::XTileRender()
 {
 }
 
 
-XMultiTextureRender::~XMultiTextureRender()
+XTileRender::~XTileRender()
 {
 }

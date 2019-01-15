@@ -51,13 +51,13 @@ bool IntroScene::Init() noexcept
 	pObject->SetParent(ObjectManager::Get().Lights.front());
 
 	// 높이 맵
-	auto mapMap = new HeightMap(L"HeightMap", EComponent::Renderer, L"mounds.jpg");
-	auto pHeightMap = new GameObject(L"HeightMap", mapMap, EObjType::Map);
-	mapMap->CreateHeightMap(DxManager::GetDContext(), L"HeightMap/HEIGHT_MOUNDS.bmp", 10, 1.0f, 0.8f);
-	mapMap->SetNormalMap(L"NormalMap/wall_NM_height.dds");
-	mapMap->SetEnviromentMap(L"CubeMap/grassenvmap1024.dds", EEnviType::Fresnel);
-	pHeightMap->Translate(Vector3::Down * 100);
-	ObjectManager::Get().PushObject(pHeightMap);
+	//auto mapMap = new HeightMap(L"HeightMap", EComponent::Renderer, L"mounds.jpg");
+	//auto pHeightMap = new GameObject(L"HeightMap", mapMap, EObjType::Map);
+	//mapMap->CreateHeightMap(DxManager::GetDContext(), L"HeightMap/HEIGHT_MOUNDS.bmp", 10, 1.0f, 0.8f);
+	//mapMap->SetNormalMap(L"NormalMap/wall_NM_height.dds");
+	//mapMap->SetEnviromentMap(L"CubeMap/grassenvmap1024.dds", EEnviType::Fresnel);
+	//pHeightMap->Translate(Vector3::Down * 100);
+	//ObjectManager::Get().PushObject(pHeightMap);
 
 	// 파티클
 	auto pParticle = new ParticleSystem(L"ParticleSystem", new Particle(), L"UI/cat.png");
